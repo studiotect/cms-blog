@@ -1,4 +1,4 @@
-const newFormHandler = async function(event) {
+const newFormHandler = async function (event) {
   event.preventDefault();
 
   const title = document.querySelector('input[name="post-title"]').value;
@@ -13,9 +13,13 @@ const newFormHandler = async function(event) {
     headers: { 'Content-Type': 'application/json' },
   });
 
-  document.location.replace('/dashboard');
+  document.location.href = ('/dashboard');
+  document.location.replace('/thisroutedoesntexist');
 };
 
-document
-  .querySelector('#new-post-form')
-  .addEventListener('submit', newFormHandler);
+document.getElementById('new-post-form').addEventListener('click', function () {
+  console.log('clicked');
+  newFormHandler();
+});
+
+

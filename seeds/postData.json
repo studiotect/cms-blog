@@ -1,0 +1,14 @@
+[
+  {
+    "post_title": "First Post",
+    "contents": "This is the content of the first post."
+  },
+  {
+    "post_title": "Second Post",
+    "contents": "This is the content of the second post."
+  },
+  {
+    "post_title": "Third Post",
+    "contents": "This is the content of the third post."
+  }
+]

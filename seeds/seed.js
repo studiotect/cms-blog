@@ -13,19 +13,19 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  // for (const Post of PostData) {
-  //   await Post.create({
-  //     ...Post,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
+  for (const post of PostData) {
+    await Post.create({
+      ...post,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
 
-  // for (const Comment of CommentData) {
-  //   await Comment.create({
-  //     ...Comment,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
+  for (const comment of CommentData) {
+    await Comment.create({
+      ...comment,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
 
   process.exit(0);
 };
