@@ -1,36 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<div id="blogPost" class="row mt-4 hide">
+  <div class="col-md-6">
+    <h3>Create a New Post:</h3>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul class="flex-row">
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-    </ul>
-  </nav>
-  <header class="hero">
-    <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
-  </header>
-
-  <main class="col-auto">
-    {{{body}}}
-  </main>
-
-  <footer class="footer flex-row justify-center">
-    <button id="new-post-form" class="btn btn-primary" type="submit">➕ New Post</button>
-  </footer>
-</body>
-
-<script src="/js/logout.js"></script>
+    <form class="form" id="new-post-form">
+      <div class="form-group">
+        <label for="title-name">Title:</label>
+        <input class="form-input" type="text" id="post_title" name="post_title" />
+      </div>
+      <div class="form-group">
+        <label for="comments">comments:</label>
+        <textarea class="form-input" id="comments" name="comments"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
+<button id="new-post-btn" class="btn btn-primary">➕ New Post</button>
+{{#each posts as |post|}}
+<h3>{{post.post_title}}</h3>
+<p>{{post.contents}}</p>
+{{/each}}
 <script src="/js/new.js"></script>
-
-</html>
